@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">InClass03</string>
+    <string name="string_email_placeholder">Email</string>
+    <string name="string_name_placeholder">Name</string>
+    <string name="string_textVWDept">Department :</string>
+    <string name="string_SIS">SIS</string>
+    <string name="string_CS">CS</string>
+    <string name="string_BIO">BIO</string>
+    <string name="string_Others">Others</string>
+    <string name="string_mood">Your Current Mood :</string>
+    <string name="string_submit">Submit</string>
+    <string name="string_HeadingDisplayActivity">Student Information</string>
+    <string name="string_HeadingEditActivity">Edit Information</string>
+    <string name="string_Name">Name :</string>
+    <string name="string_Email">Email :</string>
+    <string name="string_Department">Department :</string>
+    <string name="string_Mood">Mood :</string>
+    <string name="string_save">Save</string>
+
+</resources>

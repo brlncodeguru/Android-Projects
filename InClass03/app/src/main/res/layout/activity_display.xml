@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lakshminarayanabr.inclass03.DisplayActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_HeadingDisplayActivity"
+        android:id="@+id/textViewHeading"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_Name"
+        android:id="@+id/textViewName"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/textViewHeading"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:id="@+id/textViewNameValue"
+        android:layout_below="@+id/textViewHeading"
+
+        android:layout_toRightOf="@+id/textViewName"
+        android:layout_toEndOf="@+id/textViewName"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/buttonNameEdit"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textViewHeading"
+        android:layout_toRightOf="@+id/textViewNameValue"
+        android:background="@drawable/ic_action_edit"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_Email"
+        android:id="@+id/textViewEmail"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/textViewName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:id="@+id/textViewEmailValue"
+        android:layout_below="@+id/textViewNameValue"
+
+        android:layout_toRightOf="@+id/textViewEmail"
+        android:layout_toEndOf="@+id/textViewEmail"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/buttonEmailEdit"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/buttonNameEdit"
+        android:layout_toRightOf="@+id/textViewEmailValue"
+        android:background="@drawable/ic_action_edit"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_Mood"
+        android:id="@+id/textViewMood"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/textViewDept"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:id="@+id/textViewMoodValue"
+        android:layout_below="@+id/textViewDeptValue"
+
+        android:layout_toRightOf="@+id/textViewMood"
+        android:layout_toEndOf="@+id/textViewMood"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/buttonMoodEdit"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/buttonDeptEdit"
+        android:layout_toRightOf="@+id/textViewMoodValue"
+        android:background="@drawable/ic_action_edit"
+        />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/string_Department"
+    android:id="@+id/textViewDept"
+    android:layout_marginTop="20dp"
+    android:textSize="20sp"
+    android:layout_below="@+id/textViewEmail"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:id="@+id/textViewDeptValue"
+        android:layout_below="@+id/textViewEmailValue"
+
+        android:layout_toRightOf="@+id/textViewDept"
+        android:layout_toEndOf="@+id/textViewDept"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/buttonDeptEdit"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/buttonEmailEdit"
+        android:layout_toRightOf="@+id/textViewDeptValue"
+        android:background="@drawable/ic_action_edit"
+        />
+</RelativeLayout>
