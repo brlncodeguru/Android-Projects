@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lakshminarayanabr.inclass04.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_PasswordCount"
+        android:id="@+id/textViewNumberOfPassword"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPasswordCountValue"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textViewNumberOfPassword"
+        android:layout_toEndOf="@+id/textViewNumberOfPassword"
+        android:layout_marginLeft="71dp"
+        android:layout_marginStart="71dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_PasswordCharacterCount"
+        android:id="@+id/textViewPasswordsLength"
+        android:layout_below="@+id/textViewNumberOfPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="90dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPasswordLengthVal"
+        android:layout_alignTop="@+id/textViewPasswordsLength"
+        android:layout_alignLeft="@+id/textViewPasswordCountValue"
+        android:layout_alignStart="@+id/textViewPasswordCountValue" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/seekBarPasswordsCount"
+        android:layout_below="@+id/textViewNumberOfPassword"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:max="9" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/seekBarPasswordLength"
+        android:layout_below="@+id/textViewPasswordsLength"
+        android:layout_marginTop="10dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:max="15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_Password"
+        android:id="@+id/textViewPassword"
+        android:layout_below="@+id/seekBarPasswordLength"
+        android:layout_marginTop="50dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPasswordValue"
+        android:layout_below="@+id/seekBarPasswordLength"
+        android:layout_marginTop="50dp"
+
+        android:layout_toRightOf="@+id/textViewPassword"
+        android:layout_toEndOf="@+id/textViewPassword" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_ThreadGeneratePass"
+        android:id="@+id/buttonThread"
+        android:layout_below="@+id/textViewPassword"
+        android:layout_marginTop="50dp"
+
+
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/srting_AsyncTaskGeneratePass"
+        android:id="@+id/buttonAsync"
+        android:layout_below="@+id/buttonThread"
+        android:layout_marginTop="50dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
