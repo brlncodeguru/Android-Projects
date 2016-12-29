@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">In Class 2b</string>
+    <string name="stringlength_1">Length 1:</string>
+    <string name="stringlenght_2">Length 2:</string>
+    <string name="areaString">Area:</string>
+    <string name="string_Areaoftriangle">Area of Triangle</string>
+    <string name="string_Areaofsquare">Area of Square</string>
+    <string name="string_Areaofcircle">Area of Circle</string>
+    <string name="string_Areaofrectangle">Area of Rectangle</string>
+    <string name="string_Clearall">Claer All</string>
+    <string name="stringTriangle">Triangle</string>
+    <string name="stringSquare">Square</string>
+    <string name="stringCircle">Circle</string>
+    <string name="stringRectangle">Rectangle</string>
+    <string name="stringClearall">Clear All</string>
+    <string name="stringcalculate">Calculate</string>
+</resources>
+
+    </resources>
