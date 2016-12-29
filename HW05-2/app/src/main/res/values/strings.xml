@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HW05</string>
+    <string name="String_Submit">Submit</string>
+    <string name="String_HourlyData">Hourly Data</string>
+    <string name="String_CurrentLocation">Current Location:</string>
+    <string name="String_location">location</string>
+    <string name="String_NoFavourites">No Favourites in the list</string>
+    <string name="String_AddFavourites">Add Favourites</string>
+</resources>

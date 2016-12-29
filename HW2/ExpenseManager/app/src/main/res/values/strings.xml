@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ExpenseManager</string>
+    <string name="string_Finish">Finish</string>
+    <string name="string_ShowExpenses">Show Expenses</string>
+    <string name="string_DeleteExpense">Delete Expense</string>
+    <string name="string_AddExpense">Add Expense</string>
+    <string name="string_EditExpense">Edit Expense</string>
+    <string name="string_AddExpenseHeading">Add Expense</string>
+    <string name="string_ExpenseName">Expense Name</string>
+    <string name="string_Category">Category</string>
+    
+    <string name="string_CategoryPrompt">Select Category</string>
+    <string name="string_Amount">Amount</string>
+    <string name="string_Date">Date</string>
+    <string name="string_Receipt">Receipt</string>
+    <string name="string_SelectExpense">Select Expense</string>
+    <string name="string_Save">Save</string>
+    <string name="string_Delete">Delete</string>
+
+    <string name="string_Gallery">Gallery</string>
+    <string name="string_Camera">Camera</string>
+
+
+    <string name="string_Cancel">Cancel</string>
+    <string name="string_ShowExpenseHeader">Expense Details</string>
+    <string name="string_Name">Name</string>
+    <string-array name="stringarray_ExpenseCategories">
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Trips</item>
+        <item>Utilities</item>
+        <item>Others</item>
+
+    </string-array>
+</resources>

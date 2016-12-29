@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lakshminarayanabr.hw05.CityWeatherActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/String_HourlyData"
+        android:id="@+id/textViewHourlyData"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:backgroundTint="@color/button_material_light"
+        android:background="@color/button_material_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_CurrentLocation"
+        android:id="@+id/textViewCurrentLoacatton"
+        android:layout_below="@+id/textViewHourlyData"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/String_location"
+        android:id="@+id/textViewLocation"
+        android:layout_below="@+id/textViewHourlyData"
+        android:layout_toRightOf="@+id/textViewCurrentLoacatton"
+        android:layout_toEndOf="@+id/textViewCurrentLoacatton"
+        android:layout_marginTop="5dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewWeatherHourly"
+        android:layout_below="@+id/textViewCurrentLoacatton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/button_material_light" />
+
+</RelativeLayout>

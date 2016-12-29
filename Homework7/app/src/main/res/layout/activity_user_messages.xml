@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_user_messages"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lakshminarayanabr.homework7.UserMessagesActivity"
+    >
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewFriendFullName"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square"
+        android:id="@+id/imageViewFriendPic"
+        android:layout_below="@+id/textViewFriendFullName"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:text="ChatMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewChatMessages"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageViewFriendPic"
+        android:layout_marginTop="10dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textViewChatMessages"
+        android:layout_marginTop="10dp"
+        android:id="@+id/listViewMessages"
+        android:layout_height="150dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/listViewMessages"
+        android:layout_alignEnd="@+id/textViewChatMessages"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editTextMessage"
+        android:inputType="text" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/messenger_bubble_small_blue"
+        android:layout_alignTop="@+id/editTextMessage"
+        android:layout_toEndOf="@+id/editTextMessage"
+        android:id="@+id/imageViewSendMesssage" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@android:drawable/sym_contact_card"
+        android:layout_below="@+id/listViewMessages"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/imageViewImageUpload"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>

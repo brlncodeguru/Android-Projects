@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="txtViewQno" type="id"></item>
+    <item name="txtViewTimer" type="id"></item>
+    <item name="imgViewQues" type="id"></item>
+    <item name="txtViewQuestion" type="id"></item>
+    <item name="btnNext" type="id"></item>
+    <item name="btnQuit" type="id"></item>
+    <item name="scrollVwChoice" type="id"></item>
+    <item name="linLayout" type="id"></item>
+    <item name="progressBar" type="id"></item>
+    <item name="txtLoading" type="id"></item>
+
+
+
+
+</resources>

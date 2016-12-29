@@ -1,0 +1,328 @@
+<html>
+<head>
+<title>BACCalc.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+BACCalc.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.welcome.baccalculator; 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.Context; 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.Button; 
+</span><span class="s0">import </span><span class="s1">android.widget.EditText; 
+</span><span class="s0">import </span><span class="s1">android.widget.ProgressBar; 
+</span><span class="s0">import </span><span class="s1">android.widget.RadioButton; 
+</span><span class="s0">import </span><span class="s1">android.widget.RadioGroup; 
+</span><span class="s0">import </span><span class="s1">android.widget.SeekBar; 
+</span><span class="s0">import </span><span class="s1">android.widget.Switch; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast; 
+ 
+</span><span class="s0">import </span><span class="s1">org.w3c.dom.Text; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList; 
+ 
+</span><span class="s0">public class </span><span class="s1">BACCalc </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+</span><span class="s0">int </span><span class="s1">weight=</span><span class="s2">0</span><span class="s1">,drinkSize=</span><span class="s2">1</span><span class="s1">; 
+    String gender; 
+    </span><span class="s0">int </span><span class="s1">alcoholPercent; 
+    String statusMessage; 
+    Double bacLevel; 
+ 
+   </span><span class="s0">static </span><span class="s1">ArrayList&lt;Drink&gt; arrLstDrinks=</span><span class="s0">new </span><span class="s1">ArrayList&lt;Drink&gt;(); 
+ 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) 
+    { 
+        </span><span class="s0">try </span><span class="s1">{ 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_baccalc); 
+ 
+        </span><span class="s0">final </span><span class="s1">EditText txtFieldWeight=(EditText)findViewById(R.id.editTextWeight); 
+        </span><span class="s0">final </span><span class="s1">Switch swGender=(Switch)findViewById(R.id.switchGender); 
+        </span><span class="s0">final </span><span class="s1">Button btnSave=(Button)findViewById(R.id.buttonSave); 
+        </span><span class="s0">final </span><span class="s1">Button btnAddDrink=(Button)findViewById(R.id.buttonAdddrink); 
+        Button btnReset=(Button)findViewById(R.id.buttonReset); 
+        </span><span class="s0">final </span><span class="s1">RadioGroup rdgrpDrink=(RadioGroup)findViewById(R.id.radioGroupDrinkSize); 
+        </span><span class="s0">final </span><span class="s1">RadioButton rdBtn1oz=(RadioButton)findViewById(R.id.radioButton1Oz); 
+        </span><span class="s0">final </span><span class="s1">RadioButton rdBtn5oz=(RadioButton)findViewById(R.id.radioButton5oz); 
+        </span><span class="s0">final </span><span class="s1">RadioButton rdBtn12oz=(RadioButton)findViewById(R.id.radioButton12oz); 
+        </span><span class="s0">final </span><span class="s1">SeekBar skBar=(SeekBar)findViewById(R.id.seekBarAlcohol); 
+        </span><span class="s0">final </span><span class="s1">TextView txtStatus= (TextView)findViewById(R.id.textViewStatusValue); 
+        </span><span class="s0">final </span><span class="s1">TextView txtBacLevelVal=(TextView)findViewById(R.id.textViewBACLevelValue); 
+ 
+ 
+ 
+        </span><span class="s3">/* Progress bar */</span><span class="s1"> 
+        </span><span class="s0">final </span><span class="s1">ProgressBar pgBar=(ProgressBar)findViewById(R.id.progressBarStatus); 
+        </span><span class="s0">final </span><span class="s1">TextView textVwBACvalue=(TextView)findViewById(R.id.textViewBACLevelValue); 
+ 
+ 
+        </span><span class="s0">final </span><span class="s1">TextView txtVwAlcoholPerCentValue=(TextView)findViewById(R.id.textViewAlcoholValue); 
+        String progressValue=String.valueOf(skBar.getProgress()*</span><span class="s2">5</span><span class="s1">)+</span><span class="s4">&quot;%&quot;</span><span class="s1">; 
+        txtVwAlcoholPerCentValue.setText(progressValue); 
+        </span><span class="s3">/*RadioGroup */</span><span class="s1"> 
+        rdgrpDrink.setOnCheckedChangeListener(</span><span class="s0">new </span><span class="s1">RadioGroup.OnCheckedChangeListener() { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onCheckedChanged(RadioGroup group, </span><span class="s0">int </span><span class="s1">checkedId) { 
+                </span><span class="s0">if</span><span class="s1">(checkedId==rdBtn1oz.getId()) 
+                { 
+                    drinkSize=</span><span class="s2">1</span><span class="s1">; 
+                } 
+                </span><span class="s0">else if</span><span class="s1">(checkedId==rdBtn5oz.getId()) 
+                { 
+                    drinkSize=</span><span class="s2">5</span><span class="s1">; 
+ 
+                } 
+                </span><span class="s0">else if</span><span class="s1">(checkedId==rdBtn12oz.getId()) 
+                { 
+                    drinkSize=</span><span class="s2">12</span><span class="s1">; 
+ 
+                } 
+ 
+            } 
+        }); 
+ 
+        </span><span class="s3">/* Buttons */</span><span class="s1"> 
+        btnSave.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onClick(View v) 
+            { 
+               </span><span class="s0">try</span><span class="s1">{ 
+                weight=Integer.parseInt(txtFieldWeight.getText().toString()); 
+                </span><span class="s0">if</span><span class="s1">(swGender.isChecked()) 
+                { 
+                    gender=</span><span class="s4">&quot;M&quot;</span><span class="s1">; 
+                } 
+                </span><span class="s0">else</span><span class="s1"> 
+                { 
+                    gender=</span><span class="s4">&quot;F&quot;</span><span class="s1">; 
+                } 
+                </span><span class="s0">if</span><span class="s1">(!arrLstDrinks.isEmpty()) 
+                { 
+                    bacLevel=calculateBACLevel(); 
+                    </span><span class="s0">if</span><span class="s1">(bacLevel&gt;=</span><span class="s2">0.25</span><span class="s1">) 
+                    { 
+                        bacLevel=</span><span class="s2">0.25</span><span class="s1">; 
+ 
+                        rdgrpDrink.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        btnSave.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        btnAddDrink.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        rdBtn1oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        rdBtn5oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        rdBtn12oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        skBar.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                        Context context = getApplicationContext(); 
+                        CharSequence text = </span><span class="s4">&quot;No More Drinks For You!&quot;</span><span class="s1">; 
+                        </span><span class="s0">int </span><span class="s1">duration = Toast.LENGTH_SHORT; 
+ 
+                        Toast toast = Toast.makeText(context, text, duration); 
+                        toast.show(); 
+                        statusMessage=</span><span class="s4">&quot;Over the limit!&quot;</span><span class="s1">; 
+ 
+ 
+ 
+                    } 
+                    </span><span class="s0">else</span><span class="s1"> 
+                    { 
+                        </span><span class="s0">if</span><span class="s1">(bacLevel&lt;=</span><span class="s2">0.08</span><span class="s1">) 
+                        { 
+                            statusMessage=</span><span class="s4">&quot;You're Safe.&quot;</span><span class="s1">; 
+                            txtStatus.setBackgroundResource(R.drawable.rounded_corner_safe); 
+                        } 
+                        </span><span class="s0">else if</span><span class="s1">(bacLevel&gt;</span><span class="s2">0.08 </span><span class="s1">&amp;&amp; bacLevel&lt;</span><span class="s2">0.20</span><span class="s1">) 
+                        { 
+                            statusMessage=</span><span class="s4">&quot;Be Careful..&quot;</span><span class="s1">; 
+                            txtStatus.setBackgroundResource(R.drawable.rounded_corner_careful); 
+                        } 
+                        </span><span class="s0">else if</span><span class="s1">(bacLevel&gt;=</span><span class="s2">0.20</span><span class="s1">) 
+                        { 
+                            statusMessage=</span><span class="s4">&quot;Over the limit!&quot;</span><span class="s1">; 
+                            txtStatus.setBackgroundResource(R.drawable.rounded_corner_safe); 
+                        } 
+                    } 
+                    textVwBACvalue.setText(bacLevel.toString()); 
+                    Double progressDouble=bacLevel*</span><span class="s2">100</span><span class="s1">; 
+                    </span><span class="s0">int </span><span class="s1">progressValue=progressDouble.intValue(); 
+                    pgBar.setProgress(progressValue); 
+                    txtStatus.setText(statusMessage); 
+                } 
+               } </span><span class="s0">catch</span><span class="s1">(Exception e){} 
+            } 
+        }); 
+ 
+         btnAddDrink.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+             @Override 
+             </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+ 
+                 </span><span class="s0">if</span><span class="s1">(weight==</span><span class="s2">0</span><span class="s1">) 
+            { 
+</span><span class="s3">//                Context context = getApplicationContext();</span><span class="s1"> 
+</span><span class="s3">//                CharSequence text = &quot;Enter the Weight in lbs&quot;;</span><span class="s1"> 
+</span><span class="s3">//                int duration = Toast.LENGTH_SHORT;</span><span class="s1"> 
+</span><span class="s3">//</span><span class="s1"> 
+</span><span class="s3">//                Toast toast = Toast.makeText(context, text, duration);</span><span class="s1"> 
+</span><span class="s3">//                toast.show();</span><span class="s1"> 
+                </span><span class="s0">try</span><span class="s1"> 
+                { 
+                    txtFieldWeight.setError(</span><span class="s4">&quot;Enter the Weight in lbs&quot;</span><span class="s1">); 
+                } 
+                </span><span class="s0">catch</span><span class="s1">(Exception e) 
+                { 
+ 
+                } 
+ 
+            } 
+            </span><span class="s0">else</span><span class="s1"> 
+            { 
+                Drink drnkObj=</span><span class="s0">new </span><span class="s1">Drink(drinkSize,skBar.getProgress()*</span><span class="s2">5</span><span class="s1">); 
+                arrLstDrinks.add(drnkObj); 
+                bacLevel=calculateBACLevel(); 
+                </span><span class="s0">if</span><span class="s1">(bacLevel&gt;=</span><span class="s2">0.25</span><span class="s1">) 
+                { 
+                    bacLevel=</span><span class="s2">0.25</span><span class="s1">; 
+ 
+                    rdgrpDrink.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    btnSave.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    btnAddDrink.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    rdBtn1oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    rdBtn5oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    rdBtn12oz.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    skBar.setEnabled(</span><span class="s0">false</span><span class="s1">); 
+                    Context context = getApplicationContext(); 
+                    CharSequence text = </span><span class="s4">&quot;No More Drinks For You!&quot;</span><span class="s1">; 
+                    </span><span class="s0">int </span><span class="s1">duration = Toast.LENGTH_SHORT; 
+ 
+                    Toast toast = Toast.makeText(context, text, duration); 
+                    toast.show(); 
+                    statusMessage=</span><span class="s4">&quot;Over the limit!&quot;</span><span class="s1">; 
+ 
+ 
+ 
+                } 
+                </span><span class="s0">else</span><span class="s1"> 
+                { 
+                    </span><span class="s0">if</span><span class="s1">(bacLevel&lt;=</span><span class="s2">0.08</span><span class="s1">) 
+                    { 
+                        statusMessage=</span><span class="s4">&quot;You're Safe.&quot;</span><span class="s1">; 
+                    } 
+                    </span><span class="s0">else if</span><span class="s1">(bacLevel&gt;</span><span class="s2">0.08 </span><span class="s1">&amp;&amp; bacLevel&lt;</span><span class="s2">0.20</span><span class="s1">) 
+                    { 
+                        statusMessage=</span><span class="s4">&quot;Be Careful..&quot;</span><span class="s1">; 
+                    } 
+                    </span><span class="s0">else if</span><span class="s1">(bacLevel&gt;=</span><span class="s2">0.20</span><span class="s1">) 
+                    { 
+                        statusMessage=</span><span class="s4">&quot;Over the limit!&quot;</span><span class="s1">; 
+                    } 
+                } 
+                textVwBACvalue.setText(bacLevel.toString()); 
+                Double progressDouble=bacLevel*</span><span class="s2">100</span><span class="s1">; 
+                </span><span class="s0">int </span><span class="s1">progressValue=progressDouble.intValue(); 
+                pgBar.setProgress(progressValue); 
+                txtStatus.setText(statusMessage); 
+ 
+ 
+            } 
+             } 
+         }); 
+ 
+        btnReset.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+                </span><span class="s0">try </span><span class="s1">{ 
+                rdgrpDrink.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                btnSave.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                btnAddDrink.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                    swGender.setChecked(</span><span class="s0">false</span><span class="s1">); 
+                rdBtn1oz.setChecked(</span><span class="s0">true</span><span class="s1">); 
+                skBar.setProgress(</span><span class="s2">1</span><span class="s1">); 
+                    weight=</span><span class="s2">0</span><span class="s1">; 
+                gender=</span><span class="s4">&quot;&quot;</span><span class="s1">; 
+                drinkSize=</span><span class="s2">1</span><span class="s1">; 
+                bacLevel=</span><span class="s2">0.00 </span><span class="s1">; 
+                Double BACLevelValue=bacLevel*</span><span class="s2">100</span><span class="s1">; 
+                </span><span class="s0">int </span><span class="s1">progressVal=BACLevelValue.intValue(); 
+                pgBar.setProgress(progressVal); 
+                txtStatus.setText(</span><span class="s4">&quot;&quot;</span><span class="s1">); 
+                txtBacLevelVal.setText(bacLevel.toString()); 
+                arrLstDrinks.clear(); 
+                txtFieldWeight.setText(</span><span class="s4">&quot;&quot;</span><span class="s1">); 
+                rdBtn1oz.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                rdBtn5oz.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                rdBtn12oz.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+                skBar.setEnabled(</span><span class="s0">true</span><span class="s1">); 
+ 
+ 
+                } </span><span class="s0">catch</span><span class="s1">(Exception e){} 
+                         
+ 
+            } 
+        }); 
+ 
+ 
+        </span><span class="s3">/* SeekBar */</span><span class="s1"> 
+        skBar.setOnSeekBarChangeListener(</span><span class="s0">new </span><span class="s1">SeekBar.OnSeekBarChangeListener() { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onProgressChanged(SeekBar seekBar, </span><span class="s0">int </span><span class="s1">progress, </span><span class="s0">boolean </span><span class="s1">fromUser) { 
+                </span><span class="s0">try </span><span class="s1">{ 
+                String progressValue=String.valueOf(progress*</span><span class="s2">5</span><span class="s1">)+</span><span class="s4">&quot;%&quot;</span><span class="s1">; 
+                txtVwAlcoholPerCentValue.setText(progressValue); 
+                } </span><span class="s0">catch</span><span class="s1">(Exception e){} 
+            } 
+ 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onStartTrackingTouch(SeekBar seekBar) { 
+ 
+            } 
+ 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onStopTrackingTouch(SeekBar seekBar) { 
+ 
+            } 
+        }); 
+        } </span><span class="s0">catch</span><span class="s1">(Exception e){} 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">Double calculateBACLevel() 
+    { 
+        Double bacLevelValue=</span><span class="s2">0.00</span><span class="s1">; 
+        Double r; 
+        </span><span class="s0">if</span><span class="s1">(gender==</span><span class="s4">&quot;M&quot;</span><span class="s1">) 
+        { 
+            r=</span><span class="s2">0.68</span><span class="s1">; 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            r=</span><span class="s2">0.55</span><span class="s1">; 
+        } 
+        </span><span class="s0">for</span><span class="s1">(Drink d : arrLstDrinks) 
+        { 
+ 
+            bacLevelValue=bacLevelValue+(((d.drinkSize *d.alcoholPercent)*</span><span class="s2">6.24</span><span class="s1">/(weight*r))/</span><span class="s2">100</span><span class="s1">); 
+ 
+        } 
+        bacLevelValue= Math.round(bacLevelValue*</span><span class="s2">100</span><span class="s1">)/</span><span class="s2">100D</span><span class="s1">; 
+        </span><span class="s0">return </span><span class="s1">bacLevelValue; 
+ 
+    } 
+} 
+</span></pre>
+</body>
+</html>

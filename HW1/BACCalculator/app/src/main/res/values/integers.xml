@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="stringMaxProgress">5</integer>
+    <integer name="stringSeekBarProgress">1</integer>
+    <integer name="integerProgressMax">25</integer>
+    <integer name="integerWeightMax">999</integer>
+</resources>

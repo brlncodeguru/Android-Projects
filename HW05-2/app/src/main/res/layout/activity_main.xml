@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lakshminarayanabr.hw05.MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCity"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="City (i.e Charlotte)"
+        android:maxLength="30"
+        android:inputType="textCapWords"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextState"
+        android:layout_below="@+id/editTextCity"
+        android:layout_centerHorizontal="true"
+        android:hint="State (i.e NC)"
+        android:maxLength="2"
+        android:inputType="textCapCharacters"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_Submit"
+        android:id="@+id/buttonSubmit"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/editTextState"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewFavourites"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buttonSubmit" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/String_NoFavourites"
+        android:id="@+id/textViewNoFavourites"
+        android:layout_below="@+id/buttonSubmit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="99dp"
+        android:gravity="center_horizontal" />
+</RelativeLayout>

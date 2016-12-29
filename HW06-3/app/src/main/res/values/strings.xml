@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HW06</string>
+    <string name="String_AddFavourites">Settings</string>
+    <string name="Temperature">Temperature</string>
+    <string-array name="keyword">
+        <item>\u2109</item>
+        <item>\u2103</item>
+    </string-array>
+</resources>
