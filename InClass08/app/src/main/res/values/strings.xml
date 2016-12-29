@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InClass08</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="String_CurrentExpense">Current Expenses</string>
+    <string name="String_ErrorMessage">There is no expenses to show .Please add the Expense from the menu</string>
+    <string name="String_AddExpense">Add Expense</string>
+    <string name="String_ExpenseName">Expense Name</string>
+    <string name="String_Category">Category</string>
+    <string name="String_Amount">Amount</string>
+    <string name="String_Submit">Submit</string>
+    <string name="String_ShowExpense">Show Expense</string>
+    <string name="String_NAME">NAME</string>
+    <string name="String_Date">Date</string>
+    <string-array name="stringarray_ExpenseCategories">
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Trips</item>
+        <item>Utilities</item>
+        <item>Others</item>
+
+    </string-array>
+
+</resources>

@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lakshminarayanabr.inclass08.howExpenseFragment"
+    android:id="@+id/showexpenseLayout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_ShowExpense"
+        android:id="@+id/textViewHeading"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_NAME"
+        android:id="@+id/textViewName"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewNAmeValue"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_Category"
+        android:id="@+id/textViewCategory"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewCategoryValue"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="120dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_Amount"
+        android:id="@+id/textViewAmount"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/txtAmountValue"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="160dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_Date"
+        android:id="@+id/textViewDate"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewDateValue"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="220dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:id="@+id/buttonClose"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp" />
+
+</FrameLayout>
