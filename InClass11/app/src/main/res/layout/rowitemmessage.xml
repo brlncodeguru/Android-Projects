@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/VerLayout">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageHorLayout"
+        android:layout_marginLeft="150dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgcomment"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/comment" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imageDelete"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/delete" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvmessage"
+        android:text="text"
+        android:textSize="15sp"/>
+    <ImageView android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/fileImage"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"/>
+        <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/horLinLay">
+            <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvName"
+    android:text="text"
+    android:textSize="15sp"/>
+            <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvTime"
+    android:text="text2"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_gravity="end"
+    android:textSize="15sp"/>
+        </LinearLayout>
+
+
+</LinearLayout>

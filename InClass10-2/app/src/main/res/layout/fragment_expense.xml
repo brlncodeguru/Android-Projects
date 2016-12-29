@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lakshminarayanabr.inclass10.ExpenseFragment" android:id="@+id/expenseListLayout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/String_CurrentExpense"
+        android:id="@+id/textViewCurentExpense"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageViewAdd"
+        android:layout_gravity="right|top"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/add_icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/String_ErrorMessage"
+        android:id="@+id/textViewErrorMsg"
+        android:layout_gravity="center_horizontal|center_vertical" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="411dp"
+        android:id="@+id/listViewExpenses"
+        android:layout_gravity="center_horizontal|bottom" />
+
+</FrameLayout>
