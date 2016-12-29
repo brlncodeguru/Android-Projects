@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">InClass05</string>
+    <string name="stringSearchKeyword">Search Keyword</string>
+    <string name="stringGO">GO</string>
+    <string-array name="keywords">
+        <item>
+            UNCC
+        </item>
+        <item>
+            Android
+        </item>
+        <item>
+            Winter
+        </item>
+        <item>
+            Aurora
+        </item>
+        <item>
+            Wonders
+        </item>
+    </string-array>
+
+</resources>
